@@ -32,5 +32,5 @@ module.exports = async (client) => {
             }
         })
     }, 30000)
-    
+
 };
