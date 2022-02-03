@@ -1,5 +1,5 @@
 exports.run = async (client, message, args) => {
-    message.reply("Mo free premium servers are available right now, Sorry!");
+    message.reply("No free premium servers are available right now, Sorry!");
 /*
     //Deny if already claimed
     if (claimed.get(message.author.id) != null) {
