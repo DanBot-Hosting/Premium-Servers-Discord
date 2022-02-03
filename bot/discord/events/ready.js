@@ -1,3 +1,4 @@
+const exec = require('child_process').exec;
 module.exports = async (client) => {
     console.log(chalk.magenta('[DISCORD] ') + chalk.green(client.user.username + " has logged in!"));
 
@@ -15,4 +16,21 @@ module.exports = async (client) => {
         });
     }, 30000);
 
+    //Automatic 30second git pull.
+    setInterval(() => {
+        exec(`git pull`, (error, stdout) => {
+            let response = (error || stdout);
+            if (!error) {
+                if (response.includes("Already up to date.")) {
+                    //console.log('Bot already up to date. No changes since last pull')
+                } else {
+                    client.channels.cache.get('898041843902742548').send('**[AUTOMATIC]** \nNew update on GitHub. Pulling. \n\nLogs: \n```' + response + "```" + "\n\n\n**Restarting bot**")
+                    setTimeout(() => {
+                        process.exit();
+                    }, 1000)
+                }
+            }
+        })
+    }, 30000)
+    
 };
