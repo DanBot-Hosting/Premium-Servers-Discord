@@ -1,0 +1,31 @@
+{
+  "name": "dbhps",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanBot-Hosting/Premium-Servers.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DanBot-Hosting/Premium-Servers/issues"
+  },
+  "homepage": "https://github.com/DanBot-Hosting/Premium-Servers#readme",
+  "dependencies": {
+    "axios": "^0.25.0",
+    "chalk": "^4.1.2",
+    "discord.js": "^12.5.3",
+    "moment": "^2.29.1",
+    "ms": "^2.1.3",
+    "prettysize": "^2.0.0",
+    "quick.db": "^7.1.3"
+  },
+  "devDependencies": {
+    "humanize-duration": "^3.27.1"
+  }
+}

@@ -7,7 +7,7 @@ exports.run = async (client, message, args) => {
     }
 
     axios({
-        url: "http://danbot.host/external/prem",
+        url: "https://danbot.host/external/prem",
         method: 'POST',
         followRedirect: true,
         maxRedirects: 5,

@@ -8,11 +8,12 @@ Free Hosting forever!                                            /____/
 */
 
 global.config = require("./config.json");
-
 global.fs = require("fs");
 global.chalk = require('chalk');
 global.axios = require('axios');
 global.pretty = require('prettysize');
+
+require('./functions')
 
 //Discord Bot
 let db = require("quick.db");
