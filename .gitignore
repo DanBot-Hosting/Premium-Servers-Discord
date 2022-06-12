@@ -1,0 +1,6 @@
+node_modules/
+dist/
+*.gz
+.env*
+*.tsbuildinfo
+*.sqlite
