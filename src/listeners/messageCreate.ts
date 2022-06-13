@@ -21,12 +21,20 @@ export default class MessageCreateListener extends Listener {
 
 			try {
 				const found = commandHandler.commands.get(command);
-				if (found) await found.run!(message, args);
+
+				if (found) {
+					if (typeof found?.disabled === 'function' ? await found?.disabled() : found?.disabled)
+						return message.reply(`The \`${found.name}\` command is currently disabled. Try back again later!`);
+
+					await found.run!(message, args);
+				}
 			} catch (err) {
 				error(`Error while running command ${command}: ${err}`);
 			}
 		} catch (err) {
 			console.log(err);
 		}
+
+		return undefined;
 	}
 }
